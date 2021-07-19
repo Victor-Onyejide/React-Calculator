@@ -48,12 +48,28 @@ function App() {
     }
 
     let calculation;
+    let div;
+    let mul;
     switch(operator) {
       case "/":
-        calculation = String(parseFloat(prestate) / parseFloat(curstate));
+        div = parseFloat(prestate) / parseFloat(curstate);
+        if (div % 1 !== 0) {
+          calculation = div.toFixed(6);
+
+        }
+        else{
+          calculation = String(div);
+        }
         break;
       case "x":
-          calculation = String(parseFloat(prestate) * parseFloat(curstate));
+          mul = parseFloat(prestate) * parseFloat(curstate);
+          if (mul % 1 !== 0) {
+            calculation = mul.toFixed(6);
+  
+          }
+          else{
+            calculation = String(mul);
+          }
           break;
       case "+":
         calculation = String(parseFloat(prestate) + parseFloat(curstate));
